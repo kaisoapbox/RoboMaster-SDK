@@ -23,5 +23,7 @@ IF (CMAKE_SYSTEM_NAME MATCHES "Windows")
 			${FFMEPG_INCLUDE_DIRS} 
 			${OPUS_INCLUDE_DIRS})
 ELSE ()
-	target_link_libraries(libmedia_codec PRIVATE opus avcodec swscale avutil)
+	target_link_libraries(libmedia_codec PRIVATE /opt/homebrew/lib/libopus.dylib /opt/homebrew/lib/libavcodec.dylib /opt/homebrew/lib/libswscale.dylib /opt/homebrew/lib/libavutil.dylib)
+	target_include_directories(libmedia_codec PRIVATE /opt/homebrew/include)
+	# target_link_libraries(libmedia_codec PRIVATE avcodec swscale avutil)
 ENDIF (CMAKE_SYSTEM_NAME MATCHES "Windows")
